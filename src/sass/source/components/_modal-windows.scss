@@ -1,0 +1,54 @@
+@use '../utils/colors';
+@use '../utils/functions' as *;
+@use '../utils/mixins' as *;
+
+.modal {
+    position: fixed;
+    z-index: 5;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: colors.$primary-main;
+
+    .content {
+        width: 95vw;
+        height: 97vh;
+        min-width: rem(320px);
+        max-width: rem(860px);
+        padding: rem(28px);
+        background-color: colors.$white;
+        border-radius: rem(4px);
+        overflow-y: auto;
+        @extend %scrollbar;
+    }
+
+    .head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: rem(32px);
+
+        p {
+            font-size: rem(24px);
+            color: colors.$primary-main;
+        }
+
+        img {
+            width: 24px;
+            cursor: pointer;
+
+            &:hover {
+                opacity: 0.5;
+            }
+
+            &:active {
+                opacity: 1;
+            }
+        }
+    }
+}

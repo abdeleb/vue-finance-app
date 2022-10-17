@@ -1,0 +1,41 @@
+@use '../utils/colors';
+@use '../utils/functions' as *;
+
+.splashscreen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: inherit;
+
+    img {
+        width: 66%;
+        max-width: rem(350px);
+        margin-bottom: rem(28px);
+    }
+
+    h1 {
+        color: colors.$primary-main;
+        font-size: rem(36px);
+
+        span {
+            color: colors.$secondary-main;
+            font-size: inherit;
+        }
+    }
+}
+
+.loading {
+    opacity: 0.8;
+    animation: loading 0.7s linear infinite alternate;
+}
+
+@keyframes loading {
+    0% {
+        opacity: 0.8;
+    }
+
+    100% {
+        opacity: 0.2;
+    }
+}

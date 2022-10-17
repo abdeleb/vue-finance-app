@@ -1,0 +1,88 @@
+@use '../utils/colors';
+@use '../utils/functions' as *;
+@use '../utils/mixins' as *;
+
+.movements {
+    &__title {
+        font-size: rem(24px);
+        color: colors.$primary-main;
+        padding-left: rem(24px);
+        padding-top: rem(8px);
+        padding-bottom: rem(24px);
+    }
+
+    &__content {
+        display: flex;
+        justify-content: center;
+        gap: rem(8px);
+        max-height: 50vh;
+        padding: 0 rem(8px);
+        overflow-y: auto;
+        flex-wrap: wrap;
+        padding-bottom: rem(8px);
+        @extend %scrollbar;
+    }
+}
+
+.movement {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    width: 100%;
+    min-height: rem(112px);
+    height: auto;
+    max-width: rem(340px);
+    padding: rem(18px);
+    border-radius: rem(8px);
+    background-color: colors.$movement-blue;
+    @include drop-shadow(small);
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        width: 75%;
+
+        h3 {
+            font-size: rem(18px);
+        }
+
+        p {
+            font-size: rem(14px);
+            color: black;
+        }
+    }
+
+    &__action {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-end;
+
+        img {
+            width: 24px;
+            cursor: pointer;
+
+            &:hover {
+                opacity: 0.5;
+            }
+
+            &:active {
+                opacity: 1;
+            }
+        }
+
+        span {
+            font-size: rem(18px);
+        }
+    }
+}
+
+.curr-negative {
+    color: colors.$negative-currency;
+}
+
+.curr-positive {
+    color: colors.$positive-currency;
+}

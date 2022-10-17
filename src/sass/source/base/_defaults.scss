@@ -1,0 +1,58 @@
+@use '../utils/fonts';
+@use '../utils/colors';
+@use '../utils/mixins';
+
+:root {
+    --color-body: #{colors.$neutral80};
+    --color-title: #000  !important;
+    --color-background: #{colors.$neutral10};
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-body: #{colors.$neutral10};
+        --color-title: #{colors.$neutral10};
+        --color-background: #{colors.$neutral80};
+    }
+}
+
+body {
+    min-height: 100vh;
+    font-size: 100%;
+    font-family: fonts.$body;
+    color: var(--color-body);
+    background-color: var(--color-background);
+    line-height: 1.5;
+    @extend %scrollbar;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--color-title);
+    font-family: fonts.$title;
+}
+
+a {
+    color: var(--color-body);
+}
+
+#app {
+    min-height: inherit;
+}
+
+textarea {
+    resize: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    appearance: none;
+}
+
+input[type='number'] {
+    appearance: textfield;
+}

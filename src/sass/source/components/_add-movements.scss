@@ -1,0 +1,100 @@
+@use '../utils/colors';
+@use '../utils/functions' as *;
+@use '../utils/mixins' as *;
+
+.action {
+    $parent-context: 18px;
+    font-size: rem(18px);
+
+    input[type='button'],
+    input[type='submit'] {
+        color: colors.$white;
+        font-size: em(18px, $parent-context);
+        padding: em(18px, $parent-context);
+        margin: 0 auto;
+        background-color: colors.$primary-main;
+        min-width: em(260px, $parent-context);
+        border-radius: em(30px, $parent-context);
+        cursor: pointer;
+
+        &:hover {
+            opacity: 0.9;
+        }
+
+        &:active {
+            transform: scale(0.99);
+        }
+    }
+}
+
+.form-addmovement {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    $parent-context: 18px;
+    font-size: rem(18px);
+
+    .field {
+        width: 100%;
+        max-width: em(402px, $parent-context);
+        margin-bottom: em(20px, $parent-context);
+        font-size: em(18px, $parent-context);
+
+        label {
+            margin-bottom: em(8px, $parent-context);
+        }
+
+        input[type='text'],
+        input[type='number'],
+        textarea {
+            width: 100%;
+            max-width: em(402px, $parent-context);
+            border: 2px solid colors.$primary-main;
+            border-radius: em(4px, $parent-context);
+            outline: none;
+
+            &:hover {
+                border: em(2px, $parent-context) solid colors.$variation-tone25;
+            }
+
+            &:focus {
+                border: em(2px, $parent-context) solid colors.$secondary-main;
+                @include drop-shadow(medium);
+            }
+        }
+
+        input[type='text'],
+        input[type='number'] {
+            height: em(50px, $parent-context);
+            padding: 0 em(12px, $parent-context);
+
+            &[type='number'] {
+                text-align: right;
+            }
+        }
+
+        textarea {
+            padding: em(12px, $parent-context);
+            height: em(154px, $parent-context);
+        }
+
+        .radio-label {
+            display: flex;
+            align-content: center;
+            justify-content: flex-start;
+
+            span {
+                font-size: inherit;
+            }
+        }
+
+        input[type='radio'] {
+            width: em(30px, $parent-context);
+            margin-right: em(12px, $parent-context);
+            cursor: pointer;
+        }
+    }
+}

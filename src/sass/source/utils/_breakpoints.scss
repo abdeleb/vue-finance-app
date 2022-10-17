@@ -1,0 +1,72 @@
+@mixin media($breakpoint) {
+    // Tablets
+    @if $breakpoint == tablet-xs {
+        @media only screen and (min-width: 500px) {
+            @content;
+        }
+    } @else if $breakpoint == tablet-s {
+        @media only screen and (min-width: 600px) {
+            @content;
+        }
+    } @else if $breakpoint == tablet-m {
+        @media only screen and (min-width: 768px) {
+            @content;
+        }
+    } @else if $breakpoint == tablet-l {
+        @media only screen and (min-width: 800px) {
+            @content;
+        }
+    }
+
+    // Desktops
+    @else if $breakpoint == desktop-xs {
+        @media only screen and (min-width: 800px) {
+            @content;
+        }
+    } @else if $breakpoint == desktop-s {
+        @media only screen and (min-width: 992px) {
+            @content;
+        }
+    } @else if $breakpoint == desktop-m {
+        @media only screen and (min-width: 1200px) {
+            @content;
+        }
+    } @else if $breakpoint == desktop-l {
+        @media only screen and (min-width: 1480px) {
+            @content;
+        }
+    } @else if $breakpoint == desktop-xl {
+        @media only screen and (min-width: 1780px) {
+            @content;
+        }
+    }
+
+    // Only mobile
+    @else if $breakpoint == mobile-only {
+        @media only screen and (max-width: 768px) {
+            @content;
+        }
+    }
+
+    // Only tablets
+    @else if $breakpoint == tablet-p-only {
+        @media only screen and (min-width: 768px) and (max-width: 992px) and (orientation: portrait) {
+            @content;
+        }
+    } @else if $breakpoint == tablet-l-only {
+        @media only screen and (min-width: 768px) and (max-width: 992px) and (orientation: landscape) {
+            @content;
+        }
+    }
+
+    // Only desktopd
+    @else if $breakpoint == desktop-s-only {
+        @media only screen and (min-width: 768px) and (max-width: 1200px) {
+            @content;
+        }
+    } @else if $breakpoint == desktop-m-only {
+        @media only screen and (min-width: 1200px) and (max-width: 1480px) {
+            @content;
+        }
+    }
+}

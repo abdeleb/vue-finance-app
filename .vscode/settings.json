@@ -1,0 +1,5 @@
+{
+    "[javascript][vue][scss][css][html][json][markdown]": {
+        "editor.formatOnSave": true
+    },
+}

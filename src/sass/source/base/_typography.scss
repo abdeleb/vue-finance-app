@@ -1,0 +1,13 @@
+@use '../utils/breakpoints' as *;
+@use '../utils/functions' as *;
+@use '../utils/mixins' as *;
+
+// Mobile, Tablet, Desktop
+$headline-mobile: h1 bold 48px, h2 bold 42px, h3 bold 32px, h4 bold 24px, h5 bold 18px;
+
+@each $header, $name-weight, $size in $headline-mobile {
+    #{$header} {
+        font-weight: get-weight($name-weight);
+        @include font-style-size($size);
+    }
+}

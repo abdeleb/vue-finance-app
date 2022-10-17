@@ -1,0 +1,32 @@
+@use '../utils/colors';
+@use '../utils/functions' as *;
+
+.main-resumen {
+    text-align: center;
+
+    p {
+        font-size: rem(18px);
+        margin-bottom: rem(8px);
+    }
+
+    h1 {
+        font-size: rem(48px);
+        margin-bottom: rem(42px);
+    }
+
+    .graphic {
+        svg {
+            padding-bottom: rem(12px);
+        }
+
+        p {
+            font-size: rem(14px);
+            text-align: center;
+        }
+    }
+
+    .graphic,
+    .action {
+        margin-bottom: rem(42px);
+    }
+}
